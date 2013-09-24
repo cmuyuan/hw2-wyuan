@@ -39,17 +39,17 @@ public class TokenBigramAnnotator extends JCasAnnotator_ImplBase {
         token1.setCasProcessorId("TokenAnnotator");
         token1.setConfidence(1.0);
         token1.setBegin(t1begin);
-        token1.setEnd(t1begin + tokens[i].length() - 1);
+        token1.setEnd(t1begin + tokens[i].length());
 
         Token token2 = new Token(arg0);
         token2.setCasProcessorId("TokenAnnotator");
         token2.setConfidence(1.0);
         token2.setBegin(t2begin);
-        token2.setEnd(t2begin + tokens[i + 1].length() - 1);
-
+        token2.setEnd(t2begin + tokens[i + 1].length());
+        //System.out.println(" token1= "+token1.getCoveredText()+" token2= "+token2.getCoveredText());
         NGram annotation = new NGram(arg0);
         annotation.setBegin(t1begin);
-        annotation.setEnd(t2begin + tokens[i + 1].length() - 1);
+        annotation.setEnd(t2begin + tokens[i + 1].length());
         annotation.setCasProcessorId("TokenBigramAnnotator");
         annotation.setConfidence(1.0);
         annotation.setElementType("edu.cmu.deiis.types.Token");
@@ -80,17 +80,17 @@ public class TokenBigramAnnotator extends JCasAnnotator_ImplBase {
         token1.setCasProcessorId("TokenAnnotator");
         token1.setConfidence(1.0);
         token1.setBegin(t1begin);
-        token1.setEnd(t1begin + tokens[i].length() - 1);
+        token1.setEnd(t1begin + tokens[i].length());
 
         Token token2 = new Token(arg0);
         token2.setCasProcessorId("TokenAnnotator");
         token2.setConfidence(1.0);
         token2.setBegin(t2begin);
-        token2.setEnd(t2begin + tokens[i + 1].length() - 1);
-
+        token2.setEnd(t2begin + tokens[i + 1].length());
+//System.out.println(" token1= "+token1.getCoveredText()+" token2= "+token2.getCoveredText());
         NGram annotation = new NGram(arg0);
         annotation.setBegin(t1begin);
-        annotation.setEnd(t2begin + tokens[i + 1].length() - 1);
+        annotation.setEnd(t2begin + tokens[i + 1].length());
         annotation.setCasProcessorId("TokenBigramAnnotator");
         annotation.setConfidence(1.0);
         annotation.setElementType("edu.cmu.deiis.types.Token");

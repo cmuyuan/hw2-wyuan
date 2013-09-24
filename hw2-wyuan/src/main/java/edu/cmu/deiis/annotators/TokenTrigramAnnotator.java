@@ -38,23 +38,23 @@ public class TokenTrigramAnnotator extends JCasAnnotator_ImplBase {
         token1.setCasProcessorId("TokenAnnotator");
         token1.setConfidence(1.0);
         token1.setBegin(t1begin);
-        token1.setEnd(t1begin + tokens[i].length() - 1);
+        token1.setEnd(t1begin + tokens[i].length());
 
         Token token2 = new Token(arg0);
         token2.setCasProcessorId("TokenAnnotator");
         token2.setConfidence(1.0);
         token2.setBegin(t2begin);
-        token2.setEnd(t2begin + tokens[i + 1].length() - 1);
+        token2.setEnd(t2begin + tokens[i + 1].length());
 
         Token token3 = new Token(arg0);
         token3.setCasProcessorId("TokenAnnotator");
         token3.setConfidence(1.0);
         token3.setBegin(t3begin);
-        token3.setEnd(t3begin + tokens[i + 2].length() - 1);
+        token3.setEnd(t3begin + tokens[i + 2].length());
         
         NGram annotation = new NGram(arg0);
         annotation.setBegin(t1begin);
-        annotation.setEnd(t3begin + tokens[i + 2].length() - 1);
+        annotation.setEnd(t3begin + tokens[i + 2].length());
         annotation.setCasProcessorId("TokenBigramAnnotator");
         annotation.setConfidence(1.0);
         annotation.setElementType("edu.cmu.deiis.types.Token");
@@ -87,23 +87,23 @@ public class TokenTrigramAnnotator extends JCasAnnotator_ImplBase {
         token1.setCasProcessorId("TokenAnnotator");
         token1.setConfidence(1.0);
         token1.setBegin(t1begin);
-        token1.setEnd(t1begin + tokens[i].length() - 1);
+        token1.setEnd(t1begin + tokens[i].length());
 
         Token token2 = new Token(arg0);
         token2.setCasProcessorId("TokenAnnotator");
         token2.setConfidence(1.0);
         token2.setBegin(t2begin);
-        token2.setEnd(t2begin + tokens[i + 1].length() - 1);
+        token2.setEnd(t2begin + tokens[i + 1].length());
         
         Token token3 = new Token(arg0);
         token3.setCasProcessorId("TokenAnnotator");
         token3.setConfidence(1.0);
         token3.setBegin(t3begin);
-        token3.setEnd(t3begin + tokens[i + 2].length() - 1);
+        token3.setEnd(t3begin + tokens[i + 2].length());
 
         NGram annotation = new NGram(arg0);
         annotation.setBegin(t1begin);
-        annotation.setEnd(t3begin + tokens[i + 2].length() - 1);
+        annotation.setEnd(t3begin + tokens[i + 2].length());
         annotation.setCasProcessorId("TokenBigramAnnotator");
         annotation.setConfidence(1.0);
         annotation.setElementType("edu.cmu.deiis.types.Token");

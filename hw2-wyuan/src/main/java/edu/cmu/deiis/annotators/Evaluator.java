@@ -26,12 +26,13 @@ public class Evaluator extends JCasAnnotator_ImplBase {
       AnswerScore as = (AnswerScore) scoreIt.next();
       double score = as.getScore();
       /*1/3 is a threshold*/
-      if(score >= 1/3 && as.getAnswer().getIsCorrect())
+      if(score >= 0.333 && as.getAnswer().getIsCorrect())//must use fraction number !!
         correct++;
-      else if(score < 1/3 && !as.getAnswer().getIsCorrect())
+      else if(score < 0.333 && !as.getAnswer().getIsCorrect())
         correct++;
+      //System.out.println("score="+score+"   IsCorrect="+as.getAnswer().getIsCorrect()+"  correct="+correct);
     }
-    
+    //System.out.println("correct="+correct+"  scoreIndex.size()="+scoreIndex.size());;
     System.out.println("accuracy is "+(double)correct/(double)scoreIndex.size());
   }
 }

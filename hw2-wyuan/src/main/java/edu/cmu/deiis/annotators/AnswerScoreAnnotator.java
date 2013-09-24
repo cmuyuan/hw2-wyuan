@@ -1,10 +1,12 @@
 package edu.cmu.deiis.annotators;
 
 import java.util.Iterator;
+
 import org.apache.uima.analysis_component.*;
 import org.apache.uima.analysis_engine.AnalysisEngineProcessException;
 import org.apache.uima.cas.FSIndex;
 import org.apache.uima.jcas.*;
+
 import edu.cmu.deiis.types.*;
 
 
@@ -28,6 +30,7 @@ public class AnswerScoreAnnotator extends JCasAnnotator_ImplBase {
     while(answerIt.hasNext()){
           int overlapCount=0;
           Answer answer = answerIt.next();
+          //System.out.println("@AnswerScoreAnnotator:   "+answer.getCasProcessorId());
           String answerStr = answer.getCoveredText();
           String[] answerTokens = answerStr.split(" ");
           for(String an : answerTokens){//for every word in answer, if appears in question, then count++
@@ -38,6 +41,7 @@ public class AnswerScoreAnnotator extends JCasAnnotator_ImplBase {
               }              
             }
           }
+          //System.out.println("overlapCount="+overlapCount+"  answerTokens.length="+answerTokens.length);
           AnswerScore answerScore = new AnswerScore(arg0);
           answerScore.setBegin(answer.getBegin());
           answerScore.setEnd(answer.getEnd());

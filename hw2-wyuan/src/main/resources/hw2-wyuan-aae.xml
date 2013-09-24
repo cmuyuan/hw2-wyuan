@@ -56,12 +56,12 @@
 			<fixedFlow>
 				<node>QuestionAnswer</node>
 				<node>Token</node>
+				<node>AnswerScore</node>
+				<node>Evaluator</node>
 				<node>Trigram</node>
 				<node>NGramAnswerScoreAnnotatorDescriptor</node>
-				<node>Evaluator</node>
 				<node>Unigram</node>
-				<node>Bigram</node>
-			<node>AnswerScore</node>
+			<node>Bigram</node>
       </fixedFlow>
 		</flowConstraints>
 
