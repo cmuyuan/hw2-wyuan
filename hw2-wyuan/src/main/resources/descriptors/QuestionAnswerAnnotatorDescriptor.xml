@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<analysisEngineDescription xmlns="http://uima.apache.org/resourceSpecifier">
+	<frameworkImplementation>org.apache.uima.java</frameworkImplementation>
+	<primitive>true</primitive>
+	<annotatorImplementationName>edu.cmu.deiis.annotators.QuestionAnswerAnnotator</annotatorImplementationName>
+
+	<analysisEngineMetaData>
+		<name>QuestionAnswerAnnotatorDescriptor</name>
+		<description>annotate questions and answers. set true if answer is ture</description>
+		<version>1.0</version>
+		<vendor>wyuan</vendor>
+
+		<configurationParameters searchStrategy="language_fallback"/>
+		<configurationParameterSettings/>
+		<!-- TypeSystem Definition -->
+		<typeSystemDescription>
+			<imports>
+				<import location="deiis_types.xml"/>
+			</imports>
+		</typeSystemDescription>
+
+		<typePriorities/>
+		<fsIndexCollection/>
+		<!-- Capabilities: Inputs, Outputs, and Preconditions -->
+		<capabilities>
+			<capability>
+				<inputs/>
+				<outputs>
+					<type allAnnotatorFeatures="true">edu.cmu.deiis.types.Question</type>
+          <type allAnnotatorFeatures="true">edu.cmu.deiis.types.Answer</type>
+        </outputs>
+				<languagesSupported/>
+			</capability>
+		</capabilities>
+		<operationalProperties>
+			<modifiesCas>true</modifiesCas>
+			<multipleDeploymentAllowed>true</multipleDeploymentAllowed>
+			<outputsNewCASes>false</outputsNewCASes>
+		</operationalProperties>
+	</analysisEngineMetaData>
+	<resourceManagerConfiguration/>
+</analysisEngineDescription>
